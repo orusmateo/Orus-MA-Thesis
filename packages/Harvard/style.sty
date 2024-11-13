@@ -1,0 +1,245 @@
+\ProvidesPackage{packages/Harvard/style}
+
+% School name and location
+\university{OCAD University}
+\universitycity{Toronto}
+\universitystate{Ontario}
+
+% School color found from university's graphic identity site:
+% http://isites.harvard.edu/icb/icb.do?keyword=k75408&pageid=icb.page392732
+\definecolor{SchoolColor}{rgb}{0.6471, 0.1098, 0.1882} % Crimson
+\definecolor{chaptergrey}{rgb}{0.6471, 0.1098, 0.1882} % for chapter numbers
+\definecolor{footnotegrey}{rgb}{0.5000, 0.5000, 0.5000} % for chapter numbers
+
+\hypersetup{
+    colorlinks,
+    citecolor=SchoolColor,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=SchoolColor,
+}
+
+    
+
+% Formatting guidelines found in:
+% http://www.gsas.harvard.edu/publications/form_of_the_phd_dissertation.php
+\renewcommand{\frontmatter}{
+	\input{frontmatter/personalize}
+	\maketitle
+        \copyrightpages
+	\copyrightpage
+	\abstractpage
+	\tableofcontents
+	% \listoffigures % optional
+	\dedicationpage
+	\acknowledgments
+}
+
+\renewcommand{\maketitle}{
+	\thispagestyle{empty}
+	\vspace*{\fill}
+	\vspace{100pt}
+	\begin{center}
+	\Huge \textcolor{SchoolColor}{\thetitle}  \\
+	\vspace*{\fill}
+        \Large \textsc{by} \theauthor \normalsize \\
+  	\vspace{100pt}
+	\textsc{a thesis exhibition presented to \\
+        OCAD University \\
+        in partial fulfillment of the requirements \\
+        for the degree of \\ Master of Arts \\
+        in Digital Futures \\
+        \vspace{12pt}
+        Gallery, OCAD U Waterfront Campus \\
+        April 4-6 \\
+        Toronto, Ontario, Canada, 2024}
+%	\theauthor\\ to\\ The Department of \@department\\
+%	\vspace{12pt}
+%	in partial fulfillment of the requirements\\
+%	for the degree of\\ \@degree\\
+%	in the subject of\\ \@field\\
+%	\vspace{12pt}
+%	\@university\\ \@universitycity, \@universitystate\\
+%	\@degreemonth\ \@degreeyear}
+	\end{center} \vspace*{\fill}
+}
+
+	\pagenumbering{roman}
+	\setcounter{page}{2}
+\newcommand{\copyrightpages}{
+	\newpage
+	\thispagestyle{empty}
+	\vspace*{\fill}
+	\noindent \textbf{Cite as} \\
+        \\
+	\noindent Castano-Suarez, Orus Mateo (2024) \textit{What may be known: methods for activating large texts and graphs in the climate crisis.} Available at \url{http://openresearch.ocadu.ca/id/eprint/0000/} \\
+ \vspace{2cm}
+\noindent \textit{Open Research is a publicly accessible, curated repository for the preservation and dissemination of scholarly and creative output of the OCAD University community. Material in Open Research is open access and made available via the consent of the author and/or rights holder on a non-exclusive basis.} \\
+\vspace{2cm}
+\noindent \textit{The OCAD University Library is committed to accessibility as outlined in the Ontario Human Rights Code and the Accessibility for Ontarians with Disabilities Act (AODA) and is working to improve accessibility of the Open Research Repository collection. If you require an accessible version of a repository item contact us at \url{repository@ocadu.ca}.} \\
+\vspace{2cm}
+%\noindent  \textbf{// Add this} \\
+%\noindent  \textbf{Copyright Notice This document is licensed under the Creative Commons [enter your choice of license here] 2.5 Canada License. [enter url for license here] } \\
+%\noindent  \textbf{You are free to: [enter details from the license here]} \\
+%\noindent \textbf{Under the following conditions: [enter details from the license here]} \\
+%\noindent \textbf{With the understanding that: [enter details from the license here]} 
+
+
+	\vspace*{\fill}
+	\newpage
+	\rm
+}
+
+
+\newcommand{\copyrightpage}{
+	\newpage
+	\thispagestyle{empty}
+	\vspace*{\fill}
+	\scshape \noindent \small \copyright \small 2024\hspace{3pt}-- \theauthor \\
+	\noindent all rights reserved. \\
+ \vspace{1cm}
+ \noindent Thesis submitted to the Ontario College of Art and Design University School of Graduate Studies. \\
+ \noindent ISBN: 978-1-9990054-0-5 \\
+ \noindent All rights reserved. No part of this publication may be reproduced or transmitted, in any form or by any means, without permission.
+
+ 
+	\vspace*{\fill}
+	\newpage
+	\rm
+}
+
+
+\newcommand{\dedicationpage}{
+	\newpage \thispagestyle{empty} \vspace*{\fill}
+	\scshape \noindent \input{frontmatter/dedication}
+	\vspace*{\fill} \newpage \rm
+%	\renewcommand{\headrulewidth}{0.0pt}
+
+}
+
+
+\newcommand{\abstractpage}{
+%	\chapter*{Abstract}
+	%\pagestyle{fancy}
+%	\lhead{Thesis Advisors: \@advisor} \rhead{\@author}
+	\renewcommand{\headrulewidth}{0.0pt}
+	\vspace*{35pt}
+	\begin{center}
+     \Large \textcolor{SchoolColor}{Abstract} \normalsize \\
+%     \Large \textcolor{SchoolColor}{\@title} \normalsize \\
+	\vspace*{20pt}
+%	\scshape Abstract \\ \rm
+	\end{center}
+	\input{frontmatter/abstract}
+	\vspace*{\fill}
+	\newpage \lhead{} \rhead{}
+	\cfoot{\thepage}
+}
+
+
+
+
+\newcommand{\abbreviations}{
+	\chapter*{Abbreviations}
+        \addcontentsline{toc}{chapter}{Abbreviations}
+	\noindent
+	\input{frontmatter/Abbreviations}
+	\vspace*{\fill} \newpage
+
+}
+
+
+
+
+
+
+
+\newcommand{\AI}{
+	\chapter*{Artificial Intelligence statement}
+        \addcontentsline{toc}{chapter}{Artificial Intelligence statement}
+	\noindent
+	\input{frontmatter/AI}
+	\vspace*{\fill} \newpage
+
+}
+
+
+
+\newcommand{\antistatement}{
+	\chapter*{Anti-oppression statement}
+        \addcontentsline{toc}{chapter}{Anti-oppression statement}
+
+	\noindent
+	\input{frontmatter/Antistatemnt}
+	\vspace*{\fill} \newpage
+
+}
+
+
+
+
+\newcommand{\landack}{
+	\chapter*{Land acknowledgement}
+        \addcontentsline{toc}{chapter}{Land acknowledgement}
+	\noindent
+	\input{frontmatter/Land}
+	\vspace*{\fill} \newpage
+}
+
+
+
+
+\newcommand{\professionalack}{
+	\chapter*{Professional Acknowledgements}
+        \addcontentsline{toc}{chapter}{Professional acknowledgements}
+	\noindent
+	\input{frontmatter/Professional_Acknowledgements}
+	\vspace*{\fill} \newpage
+}
+
+\newcommand{\personalack}{
+	\chapter*{Personal Acknowledgements}
+        \addcontentsline{toc}{chapter}{Personal acknowledgements}
+	\noindent
+	\input{frontmatter/Personal Acknowledgement}
+	\vspace*{\fill} \newpage
+}
+
+
+
+
+\newcommand{\acknowledgments}{
+	\chapter*{Funding and Sponsorship Acknowledgements}
+        \addcontentsline{toc}{chapter}{Funding and Sponsorship Acknowledgements}
+            \vspace{1cm} % Add vertical spacing if needed for visibility
+	\noindent
+	\input{frontmatter/thanks}
+	\vspace*{\fill} \newpage
+}
+
+
+\newcommand{\ENDOR}{
+	\chapter*{Endorsement}
+        \addcontentsline{toc}{chapter}{Endorsement}
+	\noindent
+	\input{frontmatter/Endorsements}
+	\vspace*{\fill} \newpage
+
+}
+
+
+\newcommand{\affiliation}{
+        \setcounter{page}{28}
+	\chapter*{Formative affiliations}
+        \addcontentsline{toc}{chapter}{Formative affiliations}
+	\noindent
+	\input{frontmatter/affiliation}
+	\vspace*{\fill} \newpage
+}
+
+
+
+
+
+
+

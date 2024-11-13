@@ -1,0 +1,83 @@
+%!TEX TS-program = xelatex 
+%!TEX encoding = UTF-8 Unicode
+
+% Modify the following line to match your school
+% Available options include `Harvard`, `Princeton`, and `NYU`.
+\documentclass[School=Harvard]{Dissertate}
+\usepackage[round]{natbib}
+\setcounter{secnumdepth}{3}
+\usepackage{enumitem}
+\usepackage{imakeidx}
+\makeindex
+%\usepackage[tagged, highstructure]{accessibility}
+
+%======for 3D Torus=====%
+\usepackage{tikz} % For creating graphics
+\usepackage{pgfplots} % For plotting 3D points
+\pgfplotsset{compat=1.17} % Ensures compatibility with pgfplots version 1.17
+\usepackage{xcolor} % For color management in plots
+\usetikzlibrary{3d, calc} % For 3D graphics and coordinate calculations
+
+
+\begin{document}
+% the front matter
+\input{frontmatter/personalize}
+\maketitle
+%\copyrightpages
+\copyrightpage
+\doublespacing
+\dedicationpage
+\abstractpage
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
+%\authorlist
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables}
+\abbreviations
+\antistatement
+\AI
+\landack
+\professionalack
+\personalack
+\include{frontmatter/thanks}
+\ENDOR
+\affiliation
+
+%\acknowledgments
+\doublespacing
+% include each chapter...
+%\setcounter{chapter}{-1}  % start chapter numbering at 0
+%\include{chapters/introduction}
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/Chapter5}
+\include{chapters/Chapter6}
+\include{chapters/Chapter7}
+%\include{chapters/conclusion}
+\begin{appendices}
+    \include{endmatter/appendix}
+\end{appendices}
+%removed for above on 2024 Nov 8
+
+\singlespacing
+% the back matter
+\clearpage
+\bibliography{references}
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{elsarticle-harv}
+%\printbibliography
+%\include{endmatter/colophon}
+\include{endmatter/Author Index}
+\include{endmatter/Subject index}
+\include{endmatter/Invitation}
+\include{endmatter/Author}
+\end{document}
+
+
+
