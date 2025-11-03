@@ -4,7 +4,10 @@
 % Modify the following line to match your school
 % Available options include `Harvard`, `Princeton`, and `NYU`.
 \documentclass[School=Harvard]{Dissertate}
-\usepackage[round]{natbib}
+\usepackage[round,authoryear]{natbib}
+%\usepackage[backend=biber,style=authoryear,sorting=nyt,sortcites=true]{biblatex}
+%\addbibresource{references.bib}
+
 \setcounter{secnumdepth}{3}
 \usepackage{enumitem}
 \usepackage{imakeidx}
@@ -15,35 +18,63 @@
 \usepackage{tikz} % For creating graphics
 \usepackage{pgfplots} % For plotting 3D points
 \pgfplotsset{compat=1.17} % Ensures compatibility with pgfplots version 1.17
-\usepackage{xcolor} % For color management in plots
 \usetikzlibrary{3d, calc} % For 3D graphics and coordinate calculations
+\interfootnotelinepenalty=10000 %Added 2025 Jan 11
+\raggedbottom %Added 2025 Jan 11
+
+
+%======for Âhasiw Maskêgon-Iskwêw =====%
 
 
 \begin{document}
 % the front matter
 \input{frontmatter/personalize}
 \maketitle
-%\copyrightpages
+
+\OpenResearchPage
 \copyrightpage
 \doublespacing
 \dedicationpage
 \abstractpage
 \tableofcontents
 \addcontentsline{toc}{chapter}{Table of Contents}
-%\authorlist
+
 \listoffigures
 \addcontentsline{toc}{chapter}{List of figures}
+\clearpage
+
+
+
+
 \listoftables
 \addcontentsline{toc}{chapter}{List of tables}
+\clearpage %added 2025 Jan 15
+\FloatBarrier
+
 \abbreviations
+\clearpage
+
 \antistatement
+\clearpage
+
 \AI
+\clearpage
+
 \landack
+\clearpage
+
 \professionalack
+\clearpage
+
 \personalack
-\include{frontmatter/thanks}
-\ENDOR
+\clearpage
+
+\acknowledgments
+\clearpage
+%\include{frontmatter/thanks}
+%\ENDOR
 \affiliation
+\clearpage
 
 %\acknowledgments
 \doublespacing
@@ -59,18 +90,27 @@
 \include{chapters/Chapter5}
 \include{chapters/Chapter6}
 \include{chapters/Chapter7}
-%\include{chapters/conclusion}
-\begin{appendices}
-    \include{endmatter/appendix}
-\end{appendices}
-%removed for above on 2024 Nov 8
+
+
+
+
+
+%Testing >>>
+\appendix
+%\renewcommand{\thechapter}{\Alph{chapter}} % Use letters for appendix chapters
+%\setcounter{chapter}{0} % Ensure numbering starts at 'A'
+%\chapter{Appendix} %Last removed
+\include{chapters/appendix}
+%Testing <<<
+
 
 \singlespacing
 % the back matter
 \clearpage
+\sloppy % Added 2024 Nov 1
+\bibliographystyle{elsarticle-harv}
 \bibliography{references}
 \addcontentsline{toc}{chapter}{References}
-\bibliographystyle{elsarticle-harv}
 %\printbibliography
 %\include{endmatter/colophon}
 \include{endmatter/Author Index}
@@ -81,3 +121,33 @@
 
 
 
+
+%Code Archive:
+
+% Not working
+%decomission date: 2025 Jan 11
+%>>>
+%\begin{appendices} 
+%    \renewcommand{\thechapter}{\Alph{chapter}} % Use letters for appendices
+%    \include{endmatter/appendix}
+%\end{appendices} 
+%removed for above on 2024 Nov 8, edited 2024 Jan 7 
+%<<<
+
+%Tested: Not working
+%Testing: requires moving appendix.tex into the folder called "chapters">>>
+%\begin{appendices} 
+%\include{chapters/appendix}
+%\end{appendices} 
+%<<<
+
+
+
+%Testing >>>
+\appendix
+\renewcommand{\thechapter}{\Alph{chapter}} % Use letters for appendix chapters
+\setcounter{chapter}{0} % Ensure numbering starts at 'A'
+
+\chapter{Appendix Title 1}
+\include{chapters/appendix}
+%Testing <<<

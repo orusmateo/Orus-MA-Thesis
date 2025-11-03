@@ -11,22 +11,24 @@
 \definecolor{chaptergrey}{rgb}{0.6471, 0.1098, 0.1882} % for chapter numbers
 \definecolor{footnotegrey}{rgb}{0.5000, 0.5000, 0.5000} % for chapter numbers
 
+\usepackage[hyperindex=true]{hyperref}
+
 \hypersetup{
-    colorlinks,
+    colorlinks=true,
     citecolor=SchoolColor,
     filecolor=black,
     linkcolor=black,
     urlcolor=SchoolColor,
 }
 
-    
+\usepackage{cleveref}
 
 % Formatting guidelines found in:
 % http://www.gsas.harvard.edu/publications/form_of_the_phd_dissertation.php
 \renewcommand{\frontmatter}{
 	\input{frontmatter/personalize}
 	\maketitle
-        \copyrightpages
+        \OpenResearchPage
 	\copyrightpage
 	\abstractpage
 	\tableofcontents
@@ -44,15 +46,13 @@
 	\vspace*{\fill}
         \Large \textsc{by} \theauthor \normalsize \\
   	\vspace{100pt}
-	\textsc{a thesis exhibition presented to \\
+	\textsc{A thesis presented to \\
         OCAD University \\
         in partial fulfillment of the requirements \\
         for the degree of \\ Master of Arts \\
         in Digital Futures \\
         \vspace{12pt}
-        Gallery, OCAD U Waterfront Campus \\
-        April 4-6 \\
-        Toronto, Ontario, Canada, 2024}
+        Toronto, Ontario, Canada, 2025}
 %	\theauthor\\ to\\ The Department of \@department\\
 %	\vspace{12pt}
 %	in partial fulfillment of the requirements\\
@@ -64,26 +64,22 @@
 	\end{center} \vspace*{\fill}
 }
 
+
+
 	\pagenumbering{roman}
 	\setcounter{page}{2}
-\newcommand{\copyrightpages}{
+\newcommand{\OpenResearchPage}{
 	\newpage
 	\thispagestyle{empty}
 	\vspace*{\fill}
-	\noindent \textbf{Cite as} \\
         \\
-	\noindent Castano-Suarez, Orus Mateo (2024) \textit{What may be known: methods for activating large texts and graphs in the climate crisis.} Available at \url{http://openresearch.ocadu.ca/id/eprint/0000/} \\
- \vspace{2cm}
 \noindent \textit{Open Research is a publicly accessible, curated repository for the preservation and dissemination of scholarly and creative output of the OCAD University community. Material in Open Research is open access and made available via the consent of the author and/or rights holder on a non-exclusive basis.} \\
-\vspace{2cm}
+\vspace{1cm}
 \noindent \textit{The OCAD University Library is committed to accessibility as outlined in the Ontario Human Rights Code and the Accessibility for Ontarians with Disabilities Act (AODA) and is working to improve accessibility of the Open Research Repository collection. If you require an accessible version of a repository item contact us at \url{repository@ocadu.ca}.} \\
-\vspace{2cm}
-%\noindent  \textbf{// Add this} \\
-%\noindent  \textbf{Copyright Notice This document is licensed under the Creative Commons [enter your choice of license here] 2.5 Canada License. [enter url for license here] } \\
-%\noindent  \textbf{You are free to: [enter details from the license here]} \\
-%\noindent \textbf{Under the following conditions: [enter details from the license here]} \\
-%\noindent \textbf{With the understanding that: [enter details from the license here]} 
-
+        \vspace{1cm}
+\begin{center}
+    \includegraphics[width=0.20\textwidth]{figures/OCAD U LOGO.png}
+\end{center}
 
 	\vspace*{\fill}
 	\newpage
@@ -91,20 +87,82 @@
 }
 
 
+
 \newcommand{\copyrightpage}{
 	\newpage
 	\thispagestyle{empty}
 	\vspace*{\fill}
-	\scshape \noindent \small \copyright \small 2024\hspace{3pt}-- \theauthor \\
-	\noindent all rights reserved. \\
- \vspace{1cm}
- \noindent Thesis submitted to the Ontario College of Art and Design University School of Graduate Studies. \\
- \noindent ISBN: 978-1-9990054-0-5 \\
- \noindent All rights reserved. No part of this publication may be reproduced or transmitted, in any form or by any means, without permission.
+%     \noindent \textbf{Copyright Notice} \\
+%	\scshape \noindent \small \copyright \small 2025\hspace{3pt}-- %\theauthor \\
+%     \noindent All rights reserved. No part of this publication may be %reproduced or transmitted, in any form or by any means, without %permission. \\
 
- 
-	\vspace*{\fill}
+
+
+     % Requires \usepackage{hyperref} in your preamble
+
+\section*{Copyright and License}
+
+\noindent\textbf{\textcopyright{} 2025 Orus Mateo Casta\~{n}o-Su\'arez.} This work is licensed under
+\textbf{Creative Commons Attribution--NonCommercial--ShareAlike 4.0 International (CC BY-NC-SA 4.0)}.\\
+License URL: \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{https://creativecommons.org/licenses/by-nc-sa/4.0/}
+
+\subsection*{You are free to}
+\begin{itemize}
+  \item \textbf{Share:} copy and redistribute the material in any medium or format.
+  \item \textbf{Adapt:} remix, transform, build upon, and translate the material.
+\end{itemize}
+
+\subsection*{Under the following terms}
+\begin{itemize}
+  \item \textbf{Attribution (BY):} Credit the author, provide the title and source, link to this license, and indicate if changes were made.
+  \item \textbf{NonCommercial (NC):} No commercial use (including resale, paywalled or ad-supported distribution, or other for-profit uses) without permission.
+  \item \textbf{ShareAlike (SA):} If you adapt or translate, you must distribute your contributions under the same license (CC BY-NC-SA 4.0).
+  \item \textbf{No additional restrictions:} You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+\end{itemize}
+
+\subsection*{Not permitted without permission}
+\begin{itemize}
+  \item Reselling or commercial reuse of the work or derivatives.
+  \item Relicensing adaptations under terms other than CC BY-NC-SA 4.0.
+\end{itemize}
+
+\subsection*{Third-party content}
+This work includes third-party material (e.g., images, figures, tables, artworks). Such material is not covered by the license above unless explicitly stated. For reuse beyond what the law permits (e.g., fair dealing), obtain permission from the rights holder.
+
+\subsection*{Commercial permissions}
+For uses beyond the license (e.g., commercial reuse), contact: \texttt{mateocs@ocadu.ca}.
+
+\subsection*{Rights metadata (machine-readable)}
+\texttt{License: CC BY-NC-SA 4.0} \quad\texttt{RightsURI: https://creativecommons.org/licenses/by-nc-sa/4.0/}
+
 	\newpage
+	\thispagestyle{empty}
+	\vspace*{\fill}
+
+    \newcommand{\thesisaccessdate}{\textit{day month year}}
+
+    
+\subsection*{Cite as}
+Castaño-Suárez, O.M., 2025. \textit{What may be known: methods for activating large texts and graphs in the climate crisis}. MA thesis. Ontario College of Art and Design University (OCAD U), Toronto. 
+Available at: \url{https://openresearch.ocadu.ca/id/eprint/4615/} (Accessed: \textit{\thesisaccessdate}). 
+
+
+\subsection*{Attribution (TASL) example}
+\textcopyright{} \textit{What may be known: methods for activating large texts and graphs in the climate crisis} by Orus Mateo Casta\~{n}o-Su\'arez (2025), \url{https://openresearch.ocadu.ca/id/eprint/4615/}, licensed under CC BY-NC-SA 4.0. Changes: Nasa Yuwe translation.
+
+
+
+
+
+%      \vspace{1cm}
+%    \noindent \textbf{Cite as} \\
+%     \noindent Castaño-Suárez, O.M., 2025. \textit{What may be known: %methods for activating large texts and graphs in the climate %crisis}. MA thesis. Ontario College of Art and Design University %(OCAD U), Toronto. 
+%Available at: \url{https://openresearch.ocadu.ca/id/eprint/4615/} %(Accessed: \textit{day month year}).
+% \\
+%     \vspace{1cm}
+
+	\vspace*{\fill}
+    \clearpage
 	\rm
 }
 
@@ -144,7 +202,10 @@
         \addcontentsline{toc}{chapter}{Abbreviations}
 	\noindent
 	\input{frontmatter/Abbreviations}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}     
+    \FloatBarrier
+    \clearpage
+%	\newpage
 
 }
 
@@ -155,23 +216,29 @@
 
 
 \newcommand{\AI}{
-	\chapter*{Artificial Intelligence statement}
-        \addcontentsline{toc}{chapter}{Artificial Intelligence statement}
+	\chapter*{Artificial Intelligence Statement}
+        \addcontentsline{toc}{chapter}{Artificial Intelligence Statement}
 	\noindent
 	\input{frontmatter/AI}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}    
+    \FloatBarrier
+    \clearpage
+%	\newpage
 
 }
 
 
 
 \newcommand{\antistatement}{
-	\chapter*{Anti-oppression statement}
-        \addcontentsline{toc}{chapter}{Anti-oppression statement}
+	\chapter*{Anti-oppression Statement}
+        \addcontentsline{toc}{chapter}{Anti-oppression Statement}
 
 	\noindent
 	\input{frontmatter/Antistatemnt}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}     
+    \FloatBarrier
+    \clearpage
+%	\newpage
 
 }
 
@@ -179,11 +246,14 @@
 
 
 \newcommand{\landack}{
-	\chapter*{Land acknowledgement}
-        \addcontentsline{toc}{chapter}{Land acknowledgement}
+	\chapter*{Land Acknowledgement}
+        \addcontentsline{toc}{chapter}{Land Acknowledgement}
 	\noindent
 	\input{frontmatter/Land}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}     
+    \FloatBarrier
+    \clearpage
+%	\newpage
 }
 
 
@@ -191,18 +261,24 @@
 
 \newcommand{\professionalack}{
 	\chapter*{Professional Acknowledgements}
-        \addcontentsline{toc}{chapter}{Professional acknowledgements}
+        \addcontentsline{toc}{chapter}{Professional Acknowledgements}
 	\noindent
 	\input{frontmatter/Professional_Acknowledgements}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}   
+    \FloatBarrier
+    \clearpage
+%	\newpage
 }
 
 \newcommand{\personalack}{
 	\chapter*{Personal Acknowledgements}
-        \addcontentsline{toc}{chapter}{Personal acknowledgements}
+        \addcontentsline{toc}{chapter}{Personal Acknowledgements}
 	\noindent
 	\input{frontmatter/Personal Acknowledgement}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}   
+    \FloatBarrier
+    \clearpage
+%	\newpage
 }
 
 
@@ -210,11 +286,14 @@
 
 \newcommand{\acknowledgments}{
 	\chapter*{Funding and Sponsorship Acknowledgements}
-        \addcontentsline{toc}{chapter}{Funding and Sponsorship Acknowledgements}
+        \addcontentsline{toc}{chapter}{Funding and sponsorship acknowledgements}
             \vspace{1cm} % Add vertical spacing if needed for visibility
 	\noindent
 	\input{frontmatter/thanks}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}     
+    \FloatBarrier
+    \clearpage
+%	\newpage
 }
 
 
@@ -223,19 +302,26 @@
         \addcontentsline{toc}{chapter}{Endorsement}
 	\noindent
 	\input{frontmatter/Endorsements}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}     
+    \FloatBarrier
+    \clearpage
+%	\newpage
 
 }
 
 
 \newcommand{\affiliation}{
         \setcounter{page}{28}
-	\chapter*{Formative affiliations}
-        \addcontentsline{toc}{chapter}{Formative affiliations}
+	\chapter*{Formative Affiliation Acknowledgements}
+        \addcontentsline{toc}{chapter}{Formative Affiliation Acknowledgements}
 	\noindent
 	\input{frontmatter/affiliation}
-	\vspace*{\fill} \newpage
+	\vspace*{\fill}     
+    \FloatBarrier
+    \clearpage
+%	\newpage
 }
+
 
 
 

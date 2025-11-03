@@ -32,12 +32,13 @@
 \def\pdTwoYear#1{\gdef\@pdTwoYear{#1}}
 
 \RequirePackage{color}
-\usepackage[hyperindex=true]{hyperref}
-\usepackage{cleveref}
+\usepackage[hyphens]{url}    % Allows breaking URLs at hyphens   %Added 2024 Nov 13
+%\hypersetup{breaklinks=true}  % Allows links to break across lines  %Added 2024 Nov 13
 \usepackage{imakeidx}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{caption}
+\usepackage{ulem} %ADDED FOR STRIKETHROUGH TEXT FORMAT
 \RequirePackage[tiny, md, sc]{titlesec}
 \setlength{\headheight}{15pt}
 \pagestyle{plain}
@@ -48,7 +49,6 @@
 \DeclareStringOption{School}[]
 \ProcessKeyvalOptions*
 \RequirePackage{packages/\Dissertate@School/style}
-
 \RequirePackage{graphicx}
 \RequirePackage{amssymb}
 \RequirePackage{lettrine}
@@ -147,6 +147,7 @@
 \setcounter{tocdepth}{3}
 
 \RequirePackage{url}
+
 \usepackage[titles]{tocloft}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapfont}{\normalsize \scshape}
